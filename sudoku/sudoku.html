@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang='ru'>
+<head>
+	<meta charset='utf-8' />
+	<title>Первая лаба по ИИ: Судоку</title>
+	<link rel='stylesheet' href='sudoku.css' meadia='all' type='text/css' />
+	<script type='text/javascript' src='sudoku.js' async></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<a href="https://github.com/SancheZz/site/tree/master/sudoku">
+		<img
+			style="position: absolute; top: 0; left: 0; border: 0;  z-index: 1;"
+			src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67"
+			alt="Fork me on GitHub"
+			data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png">
+	</a>
+	<section>
+		<table id='sudoku'>
+			<thead>
+				<tr align='center' valign='middle'>
+					<td colspan='9'>Судоку</td>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr align='center' valign='middle'>
+					<td colspan='9'>Сильно упрощенный вариант <a href="http://67-itmo.livejournal.com/660.html">этого алгоритма</a></td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td></td>
+					<td>6</td>
+					<td></td>
+					<td>5</td>
+					<td></td>
+					<td>1</td>
+					<td>9</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>4</td>
+					<td></td>
+					<td>9</td>
+					<td>8</td>
+					<td>1</td>
+					<td></td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>8</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>3</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>4</td>
+					<td></td>
+					<td>7</td>
+					<td></td>
+					<td>5</td>
+					<td></td>
+					<td></td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>5</td>
+					<td></td>
+					<td></td>
+					<td>6</td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td>8</td>
+					<td></td>
+					<td>4</td>
+					<td></td>
+					<td>9</td>
+					<td>6</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>2</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td></td>
+					<td>5</td>
+					<td>3</td>
+					<td>7</td>
+					<td></td>
+					<td>8</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>7</td>
+					<td>1</td>
+					<td></td>
+					<td>6</td>
+					<td></td>
+					<td>5</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table id='hits'>
+			<thead>
+				<tr align='center' valign='middle'>
+					<td colspan='9'>Матрица попаданий</td>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr align='center' valign='middle'>
+					<td colspan='9'>Количество возможных чисел в каждой клетке</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<details>
+		<summary><h2>Алгоритм</h2></summary>
+		<p>Для каждой пустой клетки считаем количество всех возможных чисел, которые могут в ней стоять и записываем это число в матрицу попаданий. После того как матрица попаданий сформирована, в ней ищется клетка, в которой может быть наименьшее количество чисел, т.е. ищется клетка, которая может принимать только одно значение, тогда с полной уверенностью можно сказать, что именно это значение должно быть в этой клетке. После записи в очередную клетку значения, матрица попаданий пересчитывается и так до тех пор, пока в матрице попаданий все клетки примут значение "0", что будет свидетельствовать о том, что в эти клетки уже имеют значение.</p>
+		<p>В том случае, если в матрице попаданий нет клеток со значением 1, алгоритм все равно возьмет ту клетку, в которой значение наименьшее, но не равно "0", и выберет для нее возможное число. Это позволит минимизировать вероятность занесения неверного числа. К примеру, если в матрице судоку пустая клетка может принимать сразу 2 значения, и алгоритм выбирает эту клетку для записи, то он записывает в нее любое из этих 2 значений, т.к. вероятность нахождения в них каждого из этих значений наивысшая по сравнению с другими пустыми клетками, которые могут принимать большее количество значений</p>
+		<p>Для удобства восприятия, занесения значения в каждую последующую пустую клетку производится с интервалом в 1 секунду.</p>
+		<p>Можно занести свои значения в матрицу судоку, кликнув по нужной клетке.</p>
+	</details>
+</body>
+</html>

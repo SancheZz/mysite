@@ -1,0 +1,73 @@
+body {
+	width: 70%;
+	margin: 0px auto;
+	font-family: "Times New Roman", sans-serif;
+}
+
+form[name="array"] {
+	margin: 10px 0px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 5px 0px;
+}
+
+input[type="text"] {
+	display: block;
+	width: 90%;
+	margin: 3px auto;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px 0px;
+	padding: 3px 5px;
+	text-align: center;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+	text-align: center;
+}
+
+form[name="array"] > div {
+	width: 360px;
+	margin: 0px auto;
+}
+
+#results {
+	margin: 10px 0px;
+}
+
+article {
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	margin: 10px auto;
+}
+
+article > p {
+	width: 95%;
+	margin: 5px auto;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #CCC;
+}
+
+article > p:last-of-type {
+	border-bottom: none;
+}
+
+span.resultView {
+	display: inline-block;
+	width: 200px;
+	text-align: right;
+	color: gray;
+	white-space: pre;
+}
+
+article.anim > p {
+	text-align: center;
+}
+
+article.anim > p > span {
+	display: inline;
+}
+
+canvas {
+	width: 100%;
+}

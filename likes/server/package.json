@@ -1,0 +1,20 @@
+{
+  "name": "likesserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "production": "node index.js --production"
+  },
+  "author": "Alex Kaz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "got": "^8.3.2",
+    "install": "^0.10.4",
+    "npm": "^5.10.0",
+    "vk-io": "^4.0.0-alpha.8",
+    "ws": "^4.1.0"
+  }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+	<meta name="keywords" content="array, sort" />
+	<meta name="description" content="quick sort array" />
+	<meta name="author" content="Alex Kaz" />
+	<title>sort</title>
+	<style>
+		@import url(sort.css) all;
+	</style>
+	<script src="sort.js"></script>
+</head>
+<body>
+	<a href="https://github.com/SancheZz/site/tree/master/sort">
+		<img
+			style="position: absolute; top: 0; left: 0; border: 0;  z-index: 1;"
+			src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67"
+			alt="Fork me on GitHub"
+			data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png">
+	</a>
+	<form name="array">
+		<input type="text" name="array-input" autocomplete="off" placeholder="Задание массива, к примеру: 1 2 3 4 5 6 7" />
+		<div>
+			<input type="button" name="random" value="сгенерировать случайные 15 значений" />
+			<input type="button" name="sort" value="сортировать" />
+		</div>
+	</form>
+	<section id="results">
+		<article>
+			<p><span class="resultView">Алгоритм: </span><a href="http://ru.wikipedia.org/wiki/Сортировка_пузырьком" target="_blank">Сортировка пузырьком</a></p>
+			<p><span class="resultView">Исходный массив: </span><output></output></p>
+			<p><span class="resultView">Отсортированный массив: </span><output></output></p>
+			<p><span class="resultView">Количество сравнений: </span><output></output></p>
+			<p><span class="resultView">Количество перестановок: </span><output></output></p>
+			<p><span class="resultView">Затраченное время: </span><output></output></p>
+		</article>
+		<article class="anim">
+			<p><span class="resultView">Наглядная анимация сортировки:</span></p>
+			<canvas></canvas>
+		</article>
+	</section>
+</body>
+</html>
